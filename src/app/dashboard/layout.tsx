@@ -3,7 +3,7 @@ import React from 'react';
 
 
 export const metadata = {
-  title: 'Dashboard',
+  title: 'Chainbase <> Sui Dashboard',
 };
 
 export default async function Layout({
