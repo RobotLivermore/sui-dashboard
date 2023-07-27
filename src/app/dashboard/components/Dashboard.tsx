@@ -7,6 +7,8 @@ import TxsSentAddressTable from "./TxsSentAddressTable";
 import TxsSentAddressPieChart from "./TxsSentAddressPieChart";
 import AddressTransactionsQueryTable from "./AddressEvent";
 import ChainbaseIntroduction from './ChainbaseIntroduction';
+import DailyNewAddressBarChart from './NewUserDaily'
+import CurrentValidators from './CurrentValidators'
 
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
@@ -20,6 +22,8 @@ export default function Dashboard() {
     { i: "d", x: 4, y: 10, w: 8, h: 10 },
     { i: "e", x: 0, y: 20, w: 8, h: 10 },
     { i: "f", x: 8, y: 20, w: 4, h: 10 },
+    { i: "g", x: 0, y: 30, w: 6, h: 10 },
+    { i: "h", x: 6, y: 30, w: 6, h: 10 },
   ];
 
   return (
@@ -54,6 +58,12 @@ export default function Dashboard() {
         </div>
         <div key="f">
           <GasUsageAddressPieChart />
+        </div>
+        <div key="g">
+          <DailyNewAddressBarChart />
+        </div>
+        <div key="h">
+          <CurrentValidators />
         </div>
         {/* <GridItemContainer key='d' className="border item">d</GridItemContainer> */}
       </ResponsiveGridLayout>
