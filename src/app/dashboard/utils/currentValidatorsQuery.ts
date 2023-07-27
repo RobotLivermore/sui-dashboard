@@ -1,6 +1,6 @@
 import { TaskValue } from "@/components/QueryTaskProvider/context";
 
-export const currentValidatorQuerySql = "with\n    latest as (\n        select\n            max(epoch) as latest\n        from\n            sui.validators\n    )\nselect\n    name,\n    staking_pool_sui_balance / 1000000000 as stake_balance\nfrom\n    sui.validators,\n    latest\nwhere\n    sui.validators.epoch = latest.latest\norder by\n    stake_balance desc;"
+export const currentValidatorQuerySql = "with\n    latest as (\n        select\n            max(epoch) as latest\n        from\n            sui.validators\n    )\nselect\n    name,\n    staking_pool_sui_balance / 1000000000 as stake_balance,\n    \nimage_url\n from\n    sui.validators,\n    latest\nwhere\n    sui.validators.epoch = latest.latest\norder by\n    stake_balance desc;"
 
 export const CurrentValidatorQuery: TaskValue = {
   id: 'current-validator-query',
